@@ -7,6 +7,7 @@ accept = ["200", "202", "206", "401", "403", "429"]
 # GitHub-hosted runners, or expose TLS chains that Lychee cannot validate.
 exclude = [
   '^https://www\.archivogeneral\.gov\.co(?:/.*)?$',
+  '^https://www\.corteconstitucional\.gov\.co(?:/.*)?$',
   '^https://www\.datos\.gov\.co(?:/.*)?$',
   '^https://www\.legalapp\.gov\.co(?:/.*)?$',
   '^https://www\.mintic\.gov\.co(?:/.*)?$',

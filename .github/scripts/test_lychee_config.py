@@ -20,6 +20,7 @@ class LycheeConfigTests(unittest.TestCase):
     def test_excludes_bot_hostile_official_portals(self) -> None:
         urls = [
             "https://www.archivogeneral.gov.co/",
+            "https://www.corteconstitucional.gov.co/relatoria/",
             "https://www.datos.gov.co/",
             "https://www.legalapp.gov.co/",
             "https://www.mintic.gov.co/",
@@ -33,7 +34,7 @@ class LycheeConfigTests(unittest.TestCase):
 
     def test_does_not_exclude_other_links(self) -> None:
         self.assertFalse(is_excluded("https://github.com/dfgarcia290819/ia-garciabermeo"))
-        self.assertFalse(is_excluded("https://www.corteconstitucional.gov.co/relatoria/"))
+        self.assertFalse(is_excluded("https://www.consejodeestado.gov.co/"))
 
 
 if __name__ == "__main__":
