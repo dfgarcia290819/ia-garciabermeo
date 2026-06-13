@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.lycheecache
+link-report.md
+staleness-report.md

@@ -1,0 +1,27 @@
+name: Auditoria de actividad
+
+on:
+  schedule:
+    - cron: "0 10 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Revisar repositorios enlazados
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STALE_MONTHS: "18"
+        run: python .github/scripts/staleness_audit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-de-actividad
+          path: staleness-report.md

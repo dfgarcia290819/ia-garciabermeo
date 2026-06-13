@@ -1,0 +1,33 @@
+name: Fuente desactualizada
+description: Reporta una norma, fuente o descripcion que requiere revision.
+title: "[desactualizada] "
+labels: ["revision juridica"]
+body:
+  - type: input
+    id: entrada
+    attributes:
+      label: Entrada afectada
+      description: Nombre tal como aparece en el README.
+    validations:
+      required: true
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema encontrado
+      description: Explica la modificacion, derogatoria, enlace roto o imprecision.
+    validations:
+      required: true
+  - type: input
+    id: fuente
+    attributes:
+      label: Fuente oficial de respaldo
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: consulta
+    attributes:
+      label: Fecha de consulta
+      placeholder: AAAA-MM-DD
+    validations:
+      required: true

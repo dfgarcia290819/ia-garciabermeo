@@ -1,0 +1,39 @@
+name: Calidad
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compilar scripts
+        run: python -m compileall -q .github/scripts
+      - name: Ejecutar pruebas
+        run: python -m unittest discover -s .github/scripts -p "test_*.py" -v
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar enlaces
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --no-progress
+            --accept 200,202,206,401,403,429
+            --timeout 30
+            --max-retries 2
+            README.md
+          fail: true
