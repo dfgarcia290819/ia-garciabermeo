@@ -45,3 +45,8 @@ Cada solicitud de cambios ejecuta:
 
 Los resultados automaticos ayudan a detectar errores, pero no sustituyen la
 revision juridica ni la comprobacion manual de vigencia.
+
+Algunos portales oficiales colombianos bloquean verificadores automaticos,
+responden lentamente o usan cadenas de certificados que GitHub Actions no
+reconoce. Estos dominios se excluyen del comprobador automatico y deben
+revisarse manualmente antes de modificar sus entradas.
