@@ -1,0 +1,16 @@
+no_progress = true
+timeout = 30
+max_retries = 2
+accept = ["200", "202", "206", "401", "403", "429"]
+
+# These official Colombian portals reject automated checks, time out from
+# GitHub-hosted runners, or expose TLS chains that Lychee cannot validate.
+exclude = [
+  '^https://www\.archivogeneral\.gov\.co(?:/.*)?$',
+  '^https://www\.datos\.gov\.co(?:/.*)?$',
+  '^https://www\.legalapp\.gov\.co(?:/.*)?$',
+  '^https://www\.mintic\.gov\.co(?:/.*)?$',
+  '^https://www\.secretariasenado\.gov\.co(?:/.*)?$',
+  '^https://www\.sic\.gov\.co(?:/.*)?$',
+  '^https://www\.suin-juriscol\.gov\.co(?:/.*)?$',
+]

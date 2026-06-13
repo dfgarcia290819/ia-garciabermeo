@@ -30,17 +30,5 @@ jobs:
       - name: Comprobar enlaces
         uses: lycheeverse/lychee-action@v2
         with:
-          args: >
-            --no-progress
-            --accept 200,202,206,401,403,429
-            --timeout 30
-            --max-retries 2
-            --exclude 'https://www\.archivogeneral\.gov\.co/.*'
-            --exclude 'https://www\.datos\.gov\.co/.*'
-            --exclude 'https://www\.legalapp\.gov\.co/.*'
-            --exclude 'https://www\.mintic\.gov\.co/.*'
-            --exclude 'https://www\.secretariasenado\.gov\.co/.*'
-            --exclude 'https://www\.sic\.gov\.co/.*'
-            --exclude 'https://www\.suin-juriscol\.gov\.co/.*'
-            README.md
+          args: --config lychee.toml README.md
           fail: true

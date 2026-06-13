@@ -48,5 +48,6 @@ revision juridica ni la comprobacion manual de vigencia.
 
 Algunos portales oficiales colombianos bloquean verificadores automaticos,
 responden lentamente o usan cadenas de certificados que GitHub Actions no
-reconoce. Estos dominios se excluyen del comprobador automatico y deben
-revisarse manualmente antes de modificar sus entradas.
+reconoce. Estos dominios se declaran en `lychee.toml`, se excluyen del
+comprobador automatico y deben revisarse manualmente antes de modificar sus
+entradas.
