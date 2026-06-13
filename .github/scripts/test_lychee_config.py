@@ -19,6 +19,7 @@ def is_excluded(url: str) -> bool:
 class LycheeConfigTests(unittest.TestCase):
     def test_excludes_bot_hostile_official_portals(self) -> None:
         urls = [
+            "https://www.alcaldiabogota.gov.co/sisjur/",
             "https://www.archivogeneral.gov.co/",
             "https://www.corteconstitucional.gov.co/relatoria/",
             "https://www.datos.gov.co/",

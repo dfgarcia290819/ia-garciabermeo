@@ -6,6 +6,7 @@ accept = ["200", "202", "206", "401", "403", "429"]
 # These official Colombian portals reject automated checks, time out from
 # GitHub-hosted runners, or expose TLS chains that Lychee cannot validate.
 exclude = [
+  '^https://www\.alcaldiabogota\.gov\.co(?:/.*)?$',
   '^https://www\.archivogeneral\.gov\.co(?:/.*)?$',
   '^https://www\.corteconstitucional\.gov\.co(?:/.*)?$',
   '^https://www\.datos\.gov\.co(?:/.*)?$',
